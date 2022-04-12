@@ -1,33 +1,34 @@
-<h2 class="products_title">Huia - Teste Desenvolvimento Front-End</h2>
-<div *ngFor="let product of products">
-    <img src="{{ product.image }}" alt="{{ product.name }}">
-    <div class="products_info">
-        <h3>{{ product.name }}</h3>
-        <span>{{ product.description }}</span>
-        <div>
-            <span>{{ product.evaluation }}</span>
-            <span>{{ product.price | currency }}</span>
+<h1 class="products_title">Huia - Teste Desenvolvimento Front-End</h1>
+<div class="products">
+    <div class="products_card" *ngFor="let product of products">
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+        <div class="products_card_info">
+            <h2 class="products_card_title">{{ product.name }}</h2>
+            <span class="products_card_description">{{ product.description }}</span>
+            <div class="products_card_value">
+                <div class="stars">
+                    <img src="assets/star.svg"
+                         alt="Star"
+                         *ngFor="let number of starNumber(product.evaluation)">
+                    <img src="assets/star_blank.svg"
+                         alt="Star"
+                         *ngFor="let number of starNumber(5 - product.evaluation)">
+                </div>
+                <span>{{ product.price | currency }}</span>
+            </div>
         </div>
+
+        <button type="button" (click)="share()">
+            Adicionar ao carrinho
+        </button>
+
+        <app-product-alerts
+                [product]="product"
+                (notify)="onNotify()">
+        </app-product-alerts>
     </div>
-    <a
-        [title]="product.name + ' details'"
-        [routerLink]="['/products', product.id]">
-        <h3>{{ product.name }}</h3>
-    </a>
-
-    <p *ngIf="product.description">
-        Description: {{ product.description }}
-    </p>
-
-    <button type="button" (click)="share()">
-        Adicionar ao carrinho
-    </button>
-
-    <app-product-alerts
-        [product]="product"
-        (notify)="onNotify()">
-    </app-product-alerts>
 </div>
+
 
 <!--
 Copyright Google LLC. All Rights Reserved.

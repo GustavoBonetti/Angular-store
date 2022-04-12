@@ -1,10 +1,72 @@
-.products_title {
-    background-image: url("src/assets/title_background.jpeg");
-    width: 100%;
-}
-
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */
+.products_title {
+    background: rgb(0 0 0 / 50%)  url("src/assets/title_background.jpeg") center;
+    background-blend-mode: darken;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    width: 100%;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.products_card {
+    background-color: #FFFFFF;
+    height: 350px;
+    position: relative;
+}
+
+.products_card > img {
+    height: 164px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.products_card_info {
+    padding: 0 30px;
+}
+
+.products_card_title {
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.products_card_description {
+    color: #6B6B6B;
+    font-size: 12px;
+}
+
+.products_card_value {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.products_card_value > span {
+    color: #2F2F2F;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #60A12D;
+    bottom: 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 52px;
+    justify-content: center;
+    position: absolute;
+    text-transform: uppercase;
+    width: 100%;
+}

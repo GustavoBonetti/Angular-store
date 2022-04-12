@@ -1,7 +1,14 @@
+/* Fonts */
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
 /* Global Styles */
 
 * {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   color: #616161;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -18,17 +25,19 @@ body {
 }
 
 router-outlet + *  {
+  background-color: #E5E5E5;
   padding: 0 16px;
+  width: 100%;
 }
 
 /* Text */
 
 h1 {
-  font-size: 32px;
+  font-size: 38px;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 19px;
 }
 
 h1, h2 {

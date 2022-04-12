@@ -28,9 +28,9 @@ export const products = [
   },
   {
     id: 2,
-    name: 'Star Trek (Jornada nas Estrelas)',
+    name: 'Star Trek',
     price: 15,
-    description: 'Action figure de Star Trek (Jornada nas Estrelas)',
+    description: 'Action figure de Star Trek',
     image: 'assets/products/star_trek.jpeg',
     weight: 20,
     length: 6,

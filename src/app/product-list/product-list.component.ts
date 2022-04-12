@@ -11,6 +11,10 @@ export class ProductListComponent {
 
   products = products;
 
+  starNumber(i: number) {
+    return new Array(i);
+  };
+
   share() {
     window.alert('The product has been shared!');
   }
