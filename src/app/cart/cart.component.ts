@@ -31,4 +31,8 @@ export class CartComponent implements OnInit {
     this.checkoutForm.reset();
   }
 
+  getsubtotalValue() {
+    return this.cartService.getSubtotalValue();
+  }
+
 }

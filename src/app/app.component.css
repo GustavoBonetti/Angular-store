@@ -1,4 +1,15 @@
+app-product-list {
+    margin-right: 370px;
+    width: 100%;
+}
 
+app-cart {
+    height: 96vh;
+    margin: 0 20px;
+    position: fixed;
+    right: 0;
+    width: 350px;
+}
 
 
 /*

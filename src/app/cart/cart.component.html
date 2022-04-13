@@ -1,28 +1,43 @@
-<h3>Cart</h3>
-
-<p>
-    <a routerLink="/shipping">Shipping Prices</a>
-</p>
-
-<div class="cart-item" *ngFor="let item of items">
-    <span>{{ item.name }}</span>
-    <span>{{ item.price | currency }}</span>
+<div class="cart">
+    <img src="assets/cart.svg" alt="carrinho">
+    <h3>Carrinho</h3>
 </div>
+<div class="cart-content">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">
+                Calcular Frete:
+            </label>
+            <input id="name" type="text" formArrayName="name"
+                   placeholder="Digite aqui o CEP de entrega">
+        </div>
+    </form>
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <div>
-        <label for="name">
-            Name
-        </label>
-        <input id="name" type="text" formArrayName="name">
+    <div class="cart-items">
+        <div class="cart-item" *ngFor="let item of items">
+            <img src="{{ item.image }}" alt="{{ item.name }}">
+            <div class="cart-item-info">
+                <h2 class="cart-item-title">{{ item.name }}</h2>
+                <span class="cart-item-description">{{ item.description }}</span>
+            </div>
+        </div>
     </div>
 
-    <div>
-        <label for="address">
-            Address
-        </label>
-        <input id="address" type="text" formArrayName="address">
+    <div class="cart-checkout">
+        <hr/>
+        <div class="cart-checkout-item">
+            <span class="cart-checkout-title">subtotal</span>
+            <span class="cart-checkout-value">{{ getsubtotalValue() | currency }}</span>
+        </div>
+        <div class="cart-checkout-item">
+            <span class="cart-checkout-title">frete</span>
+            <span class="cart-checkout-value">{{ 15 | currency }}</span>
+        </div>
+        <div class="cart-checkout-item">
+            <span class="cart-checkout-title">total</span>
+            <span class="cart-checkout-value">{{ getsubtotalValue() + 15 | currency }}</span>
+        </div>
+        <button class="button" type="submit">Finalizar carrinho</button>
     </div>
 
-    <button class="button" type="submit">Purchase</button>
-</form>
+</div>

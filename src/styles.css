@@ -9,19 +9,20 @@
 
 * {
   font-family: "Poppins", Arial, sans-serif;
-  color: #616161;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
+  background-color: #E5E5E5;
   margin: 0;
 }
 
 .container {
   display: flex;
   flex-direction: row;
+  margin: 20px;
 }
 
 router-outlet + *  {
@@ -129,21 +130,6 @@ app-top-bar {
 app-top-bar h1 {
   color: white;
   margin: 0;
-}
-
-/* Checkout Cart, Shipping Prices */
-
-.cart-item, .shipping-item {
-  width: 100%;
-  min-width: 400px;
-  max-width: 450px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 16px 32px;
-  margin-bottom: 8px;
-  border-radius: 2px;
-  background-color: #EEEEEE;
 }
 
 

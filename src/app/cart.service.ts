@@ -25,6 +25,10 @@ export class CartService {
     return this.items;
   }
 
+  getSubtotalValue() {
+    return this.items.reduce((n, {price}) => n + price, 0);
+  }
+
   getShippingPrices() {
     return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
   }
